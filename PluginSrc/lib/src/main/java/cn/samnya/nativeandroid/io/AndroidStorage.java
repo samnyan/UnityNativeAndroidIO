@@ -40,7 +40,7 @@ public class AndroidStorage {
                 filePath = split[split.length -1];
             }
 
-            Log.i(TAG, "getRealPathFromContentUri file path: " + filePath);
+            Log.d(TAG, "getRealPathFromContentUri file path: " + filePath);
 
             // If selected from primary storage (/sdcard), the type is primary
             if ("primary".equalsIgnoreCase(type)) {
@@ -53,7 +53,7 @@ public class AndroidStorage {
             for (File f : externalStorageVolumes) {
                 // the absolute path should look like /storage/D83B-111A/Android/data/<package name>/files
                 String appDataPath = f.getAbsolutePath();
-                Log.i("File Reader", appDataPath);
+                Log.d("File Reader", appDataPath);
 
                 // Get the prefix from path.
                 if (appDataPath.contains(type)) {

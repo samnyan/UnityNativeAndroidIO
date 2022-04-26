@@ -28,7 +28,7 @@ public class File {
         DocumentFile  dir = DocumentFile.fromSingleUri(context, uri);
 
         boolean result = dir != null && dir.exists();
-        Log.i(TAG, "exists result : " + result);
+        Log.d(TAG, "exists result : " + result);
         return result;
     }
 

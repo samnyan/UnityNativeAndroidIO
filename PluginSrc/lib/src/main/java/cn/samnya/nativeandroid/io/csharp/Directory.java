@@ -39,7 +39,7 @@ public class Directory {
                 }
             }
         }
-        Log.i(TAG, "enumerateDirectories result size: " + result.size());
+        Log.d(TAG, "enumerateDirectories result size: " + result.size());
         return result.toArray(new String[0]);
     }
 
@@ -65,7 +65,7 @@ public class Directory {
                 }
             }
         }
-        Log.i(TAG, "enumerateFiles result size: " + result.size());
+        Log.d(TAG, "enumerateFiles result size: " + result.size());
         return result.toArray(new String[0]);
     }
 
@@ -74,7 +74,16 @@ public class Directory {
         DocumentFile  dir = DocumentFile.fromSingleUri(context, uri);
 
         boolean result = dir != null && dir.exists();
-        Log.i(TAG, "exists result : " + result);
+        Log.d(TAG, "exists result : " + result);
+        return result;
+    }
+
+    public static String getName(Context context, String uriString) {
+        Uri uri = Uri.parse(uriString);
+        DocumentFile  dir = DocumentFile.fromSingleUri(context, uri);
+
+        String result = dir.getName();
+        Log.d(TAG, "getName result : " + result);
         return result;
     }
 }
