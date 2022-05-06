@@ -2,7 +2,6 @@ package cn.samnya.nativeandroid.io.csharp;
 
 import android.content.Context;
 import android.net.Uri;
-import android.os.Build;
 import android.os.ParcelFileDescriptor;
 import android.provider.DocumentsContract;
 import android.util.Log;
@@ -11,13 +10,9 @@ import androidx.documentfile.provider.DocumentFile;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Paths;
 
 public class File {
 

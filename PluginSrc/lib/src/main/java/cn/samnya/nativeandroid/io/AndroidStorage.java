@@ -4,18 +4,15 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.util.Log;
 
-import androidx.activity.ComponentActivity;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.core.content.ContextCompat;
-import androidx.documentfile.provider.DocumentFile;
+import androidx.core.provider.DocumentsContractCompat;
 
 import java.io.File;
+
 
 
 public class AndroidStorage {
@@ -25,7 +22,7 @@ public class AndroidStorage {
     public static String getRealPathFromContentUri(Context context, String uriString) {
         Uri uri = Uri.parse(uriString);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && DocumentsContract.isTreeUri(uri)) {
+        if (DocumentsContractCompat.isTreeUri(uri)) {
             // Tree uri looks like content://com.android.externalstorage.documents/tree/primary%3AMusic
 
             // treeDocId is the "primary%3AMusic" part.
